@@ -1,11 +1,11 @@
 # How Much Infinity Does Physics Need?
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23212848.svg)](https://doi.org/10.5281/zenodo.23212848)
 
 Code, data, figures and manuscript for
 
 > **R. Chen**, *How Much Infinity Does Physics Need? Reverse Mathematics of Physical Limits and the Empirical
-> Boundary* (2026). DOI: [10.5281/zenodo.XXXXXXXX](https://doi.org/10.5281/zenodo.XXXXXXXX)
+> Boundary* (2026). DOI: [10.5281/zenodo.23212848](https://doi.org/10.5281/zenodo.23212848)
 
 ## Summary
 
@@ -69,8 +69,8 @@ pdflatex Chen_2026_Reverse_Math_Physics.tex
   author = {Chen, Ruqing},
   title  = {How Much Infinity Does Physics Need? Reverse Mathematics of Physical Limits and the Empirical Boundary},
   year   = {2026},
-  doi    = {10.5281/zenodo.XXXXXXXX},
-  url    = {https://doi.org/10.5281/zenodo.XXXXXXXX}
+  doi    = {10.5281/zenodo.23212848},
+  url    = {https://doi.org/10.5281/zenodo.23212848}
 }
 ```
 
