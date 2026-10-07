@@ -1,0 +1,13 @@
+﻿[A] Ising free energy per site, L x L torus vs Onsager: at K_c the error decays as L^-2.000; at 0.8 K_c as exp(-0.490 L)
+    at K_c, L^2 |f_L - f| -> 0.639913 (L = 256); Ising CFT ln[(th2+th3+th4)/(2 eta)](tau=i) = 0.639912
+    L =    4: |f_L - f| = 4.042e-02 (K_c), 1.835e-02 (0.8 K_c)
+    L =    8: |f_L - f| = 1.002e-02 (K_c), 1.325e-03 (0.8 K_c)
+    L =   16: |f_L - f| = 2.501e-03 (K_c), 2.045e-05 (0.8 K_c)
+    L =   32: |f_L - f| = 6.250e-04 (K_c), 1.601e-08 (0.8 K_c)
+    L =   64: |f_L - f| = 1.562e-04 (K_c), 3.131e-14 (0.8 K_c)
+    L =  128: |f_L - f| = 3.906e-05 (K_c), 1.110e-16 (0.8 K_c)
+    L =  256: |f_L - f| = 9.764e-06 (K_c), 1.110e-16 (0.8 K_c)
+[B] diamond-lattice mass recursion: Lambda_1 = 3.7302885624, Lambda_2 = 1.3254395276, ratio Lambda_2/Lambda_1 = 0.355318; |a_n/(p_c Lambda^n) - C| decays by 0.355318 per level
+[C] embezzlement: |(1 - F_n) - (ln2 - sigma)/H_n| from 2.71e-02 (n = 4) to 8.66e-10 (n = 2^24); times n ln n stays below 0.242
+[D] Omega_BLC: lower bound rises to 0.120182 at t = 24; certified upper bound 1.000000; certified width 0.8798 (it was 0.9375 at t = 4)
+figures written to figures/, data to data/

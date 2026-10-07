@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper below."
+title: "How Much Infinity Does Physics Need? code, data and figures"
+authors:
+  - family-names: Chen
+    given-names: Ruqing
+    affiliation: "GUT Geoservice Inc., Montreal"
+    email: ruqing@hotmail.com
+repository-code: "https://github.com/Ruqing1963/reverse-math-physics"
+doi: 10.5281/zenodo.XXXXXXXX
+date-released: 2026-10-07
+license: MIT
+keywords:
+  - reverse mathematics
+  - second-order arithmetic
+  - arithmetical comprehension
+  - computable analysis
+  - thermodynamic limit
+  - Fekete lemma
+  - c-theorem
+  - fractal dimension
+  - Chaitin Omega
+  - actual infinity
+preferred-citation:
+  type: article
+  title: "How Much Infinity Does Physics Need? Reverse Mathematics of Physical Limits and the Empirical Boundary"
+  authors:
+    - family-names: Chen
+      given-names: Ruqing
+      affiliation: "GUT Geoservice Inc., Montreal"
+  year: 2026
+  doi: 10.5281/zenodo.XXXXXXXX
