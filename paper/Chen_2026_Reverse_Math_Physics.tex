@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 \usepackage[a4paper,margin=2.5cm]{geometry}
-\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,xcolor}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,array,xcolor}
 \usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
 \usepackage{xurl}
 \hypersetup{pdftitle={How Much Infinity Does Physics Need?},pdfauthor={Ruqing Chen}}
@@ -286,7 +286,7 @@ here that proves their existence.
 \caption{Logical strength of the limits used in the series and their empirical status.}
 \label{tab:class}
 \small
-\begin{tabular}{p{4.6cm}p{3.2cm}p{2.2cm}p{4.2cm}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}p{3.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{4.2cm}}
 \toprule
 Limit & Modulus & System & Empirical status \\
 \midrule
@@ -351,6 +351,7 @@ The script \texttt{reverse\_math\_moduli.py}, the data (CSV), the figure and the
 \url{https://github.com/Ruqing1963/reverse-math-physics} and archived under DOI \href{https://doi.org/\paperdoi}{\paperdoi}.
 
 %=====================================================================
+\begingroup\raggedright
 \begin{thebibliography}{99}\small
 \bibitem{Friedman} H.~Friedman, ``Some systems of second order arithmetic and their use'', in \emph{Proceedings of the International Congress of Mathematicians (Vancouver, 1974)}, Vol.~1, Canadian Mathematical Congress (1975) 235--242.
 \bibitem{Simpson} S.~G.~Simpson, \emph{Subsystems of Second Order Arithmetic}, 2nd ed., Perspectives in Logic, Cambridge University Press and Association for Symbolic Logic (2009).
@@ -372,5 +373,6 @@ The script \texttt{reverse\_math\_moduli.py}, the data (CSV), the figure and the
 \bibitem{Simic} K.~Simic, ``The pointwise ergodic theorem in subsystems of second-order arithmetic'', J.\ Symbolic Logic 72 (2007) 45--66.
 \bibitem{MIPRE} Z.~Ji, A.~Natarajan, T.~Vidick, J.~Wright, H.~Yuen, ``MIP$^*$=RE'', arXiv:2001.04383 (2020).
 \end{thebibliography}
+\endgroup
 
 \end{document}
