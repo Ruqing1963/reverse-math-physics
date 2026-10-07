@@ -132,7 +132,7 @@ Over $\RCA$ the following are equivalent:
 
 \begin{proof}
 (i)$\Rightarrow$(ii). In $\ACA$ the infimum $\lambda=\inf_na_n/n$ exists, by the least-upper-bound principle for sequences, which
-is equivalent to (F1)~\cite{Simpson}. The classical argument then applies. Given $m$, write $n=qm+r$ with $0\le r<m$. Then
+is equivalent to (F1)~\cite{Simpson}. The classical argument then applies. Given $m$, write $n=qm+r$ with $0\le r<m$, and set $a_0=0$. Then
 $a_n\le qa_m+a_r$, so $a_n/n\le a_m/m+\max_{r<m}a_r/n$, which tends to $a_m/m$. This uses only $\Sigma^0_1$-induction. Hence $\lim
 a_n/n=\lambda$.
 
@@ -140,6 +140,15 @@ a_n/n=\lambda$.
 $a_n\ge0$, and since $b$ is nonincreasing, $a_{m+n}=(m+n)b_{m+n}\le mb_m+nb_n=a_m+a_n$. By (ii), $a_n/n=b_n$ converges, hence so
 does $c_n$, and (F1) gives $\ACA$.
 \end{proof}
+
+\begin{remark}
+The reversal uses only rational sequences, so the equivalence also holds if (ii) is restricted to rational sequences.
+Nonnegativity is no restriction: if only $a_n\ge-Cn$, then $\tilde a_n=a_n+Cn$ is subadditive and nonnegative, and $\tilde a_n/n$ converges
+if and only if $a_n/n$ does. Thermodynamic limits in $d$ dimensions are proved by the same scheme, first along cubes and then
+along van Hove sequences, with surface corrections to subadditivity~\cite{Ruelle}. The argument uses the existence of an
+infimum together with arithmetical estimates, so we expect it to go through in $\ACA$. The reversal applies to it a
+fortiori, but we do not formalise the $d$-dimensional case here.
+\end{remark}
 
 \begin{remark}
 In computability-theoretic terms, Boche, B\"ock and Deppe showed that the Fekete limit of a computable subadditive
@@ -169,7 +178,7 @@ In~\cite{Chen2026_chaitin} we considered homogeneous Cantor sets in which every 
 two end pieces of ratio $r_k=2^{-1/d_k}$, with $d_k=\tfrac14+\tfrac12a_k$. The box-counting and Hausdorff dimensions equal the
 scaling exponent
 \begin{equation}
-D=\lim_{k\to\infty}\frac{k}{\sum_{j\le k}1/d_j}
+D=\lim_{k\to\infty}\frac{k}{\sum_{j=1}^{k}1/d_j}
 \label{eq:D}
 \end{equation}
 whenever it exists. When $a_k$ are lower approximations of Chaitin's $\Omega$, $D=\tfrac14+\tfrac12\Omega$ is not computable.
@@ -184,15 +193,20 @@ Over $\RCA$ the following are equivalent:
 \end{theorem}
 
 \begin{proof}
-Put $b_k=1/d_k\in(4/3,4]$, a nonincreasing sequence, and let $\bar b_k=\tfrac1k\sum_{j\le k}b_j$ be its Ces\`aro means. Then~\eqref{eq:D}
+Put $b_k=1/d_k\in(4/3,4]$, a nonincreasing sequence, and let $\bar b_k=\tfrac1k\sum_{j=1}^kb_j$ be its Ces\`aro means. Then~\eqref{eq:D}
 states that $1/\bar b_k$ converges.
 
 (i)$\Rightarrow$(ii). By (F1) $b_k$ converges to some $L$. Ces\`aro means of a convergent sequence converge to the same limit,
 by an argument that uses only $\Sigma^0_1$-induction, so $D=1/L$.
 
 (ii)$\Rightarrow$(i). Let $\bar b_k\to L$. Since $b$ is nonincreasing, $b_k\le\bar b_k$. For $m>k$,
-$\bar b_m\le\bigl(k\bar b_k+(m-k)b_k\bigr)/m$, and letting $m\to\infty$ gives $L\le b_k$. Hence $L\le b_k\le\bar b_k\to L$, so $b_k\to L$. Then
-$a_k=2(1/b_k-\tfrac14)$ converges, and (F1) gives $\ACA$.
+\begin{equation*}
+\bar b_m\le\frac{k\bar b_k+(m-k)b_k}{m}=b_k+\frac km(\bar b_k-b_k).
+\end{equation*}
+Suppose $b_k<L$ for some $k$, and let $\delta=L-b_k>0$. Choose $m>2k(\bar b_k-b_k)/\delta$ so large that also $\bar b_m>L-\delta/2$. Then
+$\bar b_m\le b_k+\delta/2=L-\delta/2$, a contradiction. Hence $L\le b_k$ for all $k$. This argument involves only finitely many
+comparisons of given reals and is carried out in $\RCA$. Together with $b_k\le\bar b_k$ it gives $L\le b_k\le\bar b_k\to L$, so $b_k\to L$.
+Then $a_k=2(1/b_k-\tfrac14)$ converges, and (F1) gives $\ACA$.
 \end{proof}
 
 \subsection{Connectivity of computable limit sets}
@@ -293,8 +307,13 @@ Injective $\Leftrightarrow$ semidiscrete (Connes) & --- & open & used in~\cite{C
 \end{tabular}
 \end{table}
 
-For the game values, $\{(G,q):\omega^*(G)>q\}$ is $\Sigma^0_1$, so the function $G\mapsto\omega^*(G)$ exists in $\ACA$. By MIP$^*$=RE~\cite{MIPRE}
-it is not computable, so it does not exist in $\REC$.
+For the game values, $\omega^*(G)$ denotes the tensor-product value, the supremum over finite-dimensional strategies. Its
+lower cut $\{(G,q):\omega^*(G)>q\}$ is $\Sigma^0_1$, by search over finite-dimensional strategies with rational entries, so the function
+$G\mapsto\omega^*(G)$ exists in $\ACA$. By MIP$^*$=RE~\cite{MIPRE} it is not computable, so it does not exist in $\REC$. The
+commuting-operator value $\omega_{\rm co}(G)$ is approached from above by the NPA hierarchy of semidefinite
+relaxations~\cite{NPA}. Hence its upper cut $\{(G,q):\omega_{\rm co}(G)<q\}$ is $\Sigma^0_1$. The difference $\omega_{\rm co}(G)-\omega^*(G)$ can be positive, and
+this is the Tsirelson gap. Relativistic quantum field theory keeps local measurements in spacelike separated regions
+out of this gap~\cite{Chen2026_qft}.
 
 The table shows the pattern stated in the introduction. Every limit that entered an explicit certification budget has
 an explicit modulus and is provable in $\RCA$. Every limit that was shown to be empirically inaccessible is defined
@@ -315,9 +334,12 @@ alone. Yet it is logically mild, since it adds no new arithmetical consequences.
 
 Two items remain open. The resistance exponent of the critical diamond-lattice cluster is a Lyapunov exponent of a
 random nonlinear recursion. We estimated it numerically, but we have neither a proof that the defining limit exists nor
-a closed form or computable modulus, so its logical status is open. The classification of injective von Neumann
-algebras, used in~\cite{Chen2026_qft}, rests on deep operator-algebraic machinery whose strength in second-order arithmetic is
-unknown.
+a closed form or computable modulus. Ergodic theorems are a natural tool here, and the pointwise ergodic theorem is
+equivalent to $\ACA$ over $\RCA$~\cite{Simic}. An explicit contraction estimate for the recursion would instead give a computable
+modulus, and the existence would then be provable in $\RCA$ by Proposition~\ref{prop:instance}. The classification of
+injective von Neumann algebras, used in~\cite{Chen2026_qft}, rests on Tomita--Takesaki theory and ultrapower techniques.
+Separable Banach spaces can be coded in $\RCA$~\cite{Simpson}, but we know of no calibration of the theory of von Neumann
+algebras in second-order arithmetic, and the strength of Connes' theorem is open.
 
 Together with the earlier papers, the picture is consistent. Physical predictions for finite experiments are computable.
 Explicit finite-size and resource bounds are provable from computable set existence. The genuinely infinite content,
@@ -346,6 +368,8 @@ The script \texttt{reverse\_math\_moduli.py}, the data (CSV), the figure and the
 \bibitem{Kaufman} B.~Kaufman, ``Crystal statistics. II. Partition function evaluated by spinor analysis'', Phys.\ Rev.\ 76 (1949) 1232--1243.
 \bibitem{Onsager} L.~Onsager, ``Crystal statistics. I. A two-dimensional model with an order-disorder transition'', Phys.\ Rev.\ 65 (1944) 117--149.
 \bibitem{DMS} P.~Di Francesco, P.~Mathieu, D.~S\'en\'echal, \emph{Conformal Field Theory}, Springer, New York (1997).
+\bibitem{NPA} M.~Navascu\'es, S.~Pironio, A.~Ac\'in, ``A convergent hierarchy of semidefinite programs characterizing the set of quantum correlations'', New J.\ Phys.\ 10 (2008) 073013, arXiv:0803.4290.
+\bibitem{Simic} K.~Simic, ``The pointwise ergodic theorem in subsystems of second-order arithmetic'', J.\ Symbolic Logic 72 (2007) 45--66.
 \bibitem{MIPRE} Z.~Ji, A.~Natarajan, T.~Vidick, J.~Wright, H.~Yuen, ``MIP$^*$=RE'', arXiv:2001.04383 (2020).
 \end{thebibliography}
 
